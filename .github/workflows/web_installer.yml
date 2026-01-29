@@ -1,0 +1,42 @@
+name: Install to Server
+on:
+  workflow_dispatch:
+    inputs:
+      ftp_host:
+        description: 'FTP Host IP'
+        required: true
+      ftp_port:
+        description: 'FTP Port'
+        required: true
+        default: '21'
+      ftp_user:
+        description: 'FTP Username'
+        required: true
+      ftp_password:
+        description: 'FTP Password'
+        required: true
+      mission_path:
+        description: 'Mission Path (e.g. /dayzxb_missions/dayzOffline.chernarusplus)'
+        required: true
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Run Installer
+        env:
+          FTP_HOST: ${{ github.event.inputs.ftp_host }}
+          FTP_PORT: ${{ github.event.inputs.ftp_port }}
+          FTP_USER: ${{ github.event.inputs.ftp_user }}
+          FTP_PASSWORD: ${{ github.event.inputs.ftp_password }}
+          MISSION_PATH: ${{ github.event.inputs.mission_path }}
+        run: |
+          python .github/scripts/ftp_install.py

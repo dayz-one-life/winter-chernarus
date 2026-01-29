@@ -1,0 +1,19 @@
+{
+	"WorldsData":
+	{
+		"objectSpawnersArr": [
+			"./custom/snow-1.json",
+			"./custom/snow-2.json",
+			"./custom/snow-3.json",
+			"./custom/snow-4.json",
+			"./custom/snow-5.json",
+			"./custom/snow-6.json",
+			"./custom/snow-7.json",
+			"./custom/snow-8.json",
+			"./custom/snow-9.json",
+			"./custom/snow-10.json"
+		],
+		"environmentMinTemps": [-7, -7, -7, -7, -7, -7, -7, -7, -7, -7, -7, -7],
+		"environmentMaxTemps": [-3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3]
+	}
+}
