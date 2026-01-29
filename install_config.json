@@ -1,0 +1,13 @@
+{
+  "custom/*.json": {
+    "strategy": "overwrite"
+  },
+  "cfggameplay.json": {
+    "append_keys": [
+      "objectSpawnersArr"
+    ]
+  },
+  "cfgweather.xml": {
+    "strategy": "settings"
+  }
+}
